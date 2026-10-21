@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Draw Heart Character</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card" id="mainCard">
+        <!-- Floating hearts container -->
+        <div id="heartContainer" class="heart-container"></div>
+
+        <!-- Character and Biu Text -->
+        <div class="character-wrapper">
+            <svg class="character-svg" viewBox="0 0 200 200">
+                <!-- Legs -->
+                <path class="draw-line" d="M75 145 L75 170 Q80 175 85 170 L85 145" fill="none" stroke="#000"
+                    stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                <path class="draw-line" d="M115 145 L115 170 Q120 175 125 170 L125 145" fill="none" stroke="#000"
+                    stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Body -->
+                <path class="draw-line fill-white" d="M70 140 Q 65 110 100 110 Q 135 110 130 140 Z" fill="transparent" stroke="#000"
+                    stroke-width="5" stroke-linejoin="round" />
+
+                <!-- Right Arm (Gun Pose pointing right-up) -->
+                <!-- Main arm -->
+                <path class="draw-line fill-white" d="M125 125 L165 100 Q170 95 165 90 L155 95 Q145 105 130 115" fill="transparent"
+                    stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                <!-- Thumb pointing up -->
+                <path class="draw-line" d="M150 100 L 155 85 Q 160 80 155 90 L 150 95" fill="none" stroke="#000"
+                    stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Left Hand (just a small stub on the left) -->
+                <path class="draw-line" d="M70 120 Q60 130 65 135 Q70 140 75 135" fill="none" stroke="#000"
+                    stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Head -->
+                <ellipse class="draw-line main-head fill-white" cx="100" cy="80" rx="55" ry="45" fill="transparent" stroke="#000"
+                    stroke-width="5" />
+
+                <!-- Face Details -->
+                <!-- Eyes -->
+                <circle cx="80" cy="85" r="4" fill="#000" class="fade-in delay-1" />
+                <circle cx="120" cy="85" r="4" fill="#000" class="fade-in delay-1" />
+
+                <!-- Blushes -->
+                <ellipse cx="65" cy="95" rx="8" ry="4" fill="#ffb6c1" class="fade-in delay-1 opacity-80" />
+                <ellipse cx="135" cy="95" rx="8" ry="4" fill="#ffb6c1" class="fade-in delay-1 opacity-80" />
+
+                <!-- Mouth -->
+                <path d="M 95 95 Q 100 102 105 95" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"
+                    class="draw-line delay-2" />
+            </svg>
+<!-- 
+-- Name the person -- -->
+
+            <div class="biu-text" id="biuText">Binu</div>
+
+            <!-- Origin small heart on the finger -->
+            <div class="origin-heart" id="originHeart">❤️</div>
+        </div>
+
+        <!-- I Love You Text -->
+        <h1 class="love-text" id="loveText">Love You</h1>
+
+        <!-- Watermark -->
+        <div class="watermark">dev by akku</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
