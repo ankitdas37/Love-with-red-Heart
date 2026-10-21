@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    /* Dark background to make the white card pop, or dark gray */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background-color: #fdfdfd;
+    border-radius: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.character-wrapper {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 250px;
+    height: 250px;
+}
+
+.character-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* SVG Drawing Animation */
+.draw-line {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: draw 1.5s ease-in-out forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.delay-1 {
+    animation-delay: 1.5s;
+}
+
+.delay-2 {
+    animation-delay: 1.8s;
+}
+
+.opacity-80 {
+    /* To keep the blush lightly transparent, we can finish at 0.8 opacity */
+    animation-name: fadeIn80;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn80 {
+    to {
+        opacity: 0.8;
+    }
+}
+
+/* "biu" text popping */
+.biu-text {
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff69b4;
+    /* Pink color */
+    opacity: 0;
+    transform: rotate(15deg) scale(0.5);
+    animation: popBiu 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 2.2s;
+}
+
+@keyframes popBiu {
+    0% {
+        opacity: 0;
+        transform: rotate(15deg) scale(0.5) translate(-20px, 20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(15deg) scale(1) translate(0, 0);
+    }
+}
+
+/* Origin heart on the finger */
+.origin-heart {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    font-size: 24px;
+    color: #ff69b4;
+    opacity: 0;
+    transform: scale(0);
+    animation: popHeart 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 2.4s;
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+@keyframes popHeart {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Heart particles */
+.small-heart {
+    position: absolute;
+    font-size: 22px;
+    /* Set size of small heart */
+    color: #dc143c;
+    /* Crimson */
+    text-shadow: 0 0 5px rgba(220, 20, 60, 0.4);
+    /* Transition for flight */
+    transition: left 0.5s ease-out, top 0.5s ease-out, opacity 0.2s ease-in;
+    opacity: 0;
+    z-index: 10;
+}
+
+.heart-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* I Love You Text */
+.love-text {
+    position: absolute;
+    bottom: 80px;
+    right: 170px;
+    font-family: 'Georgia', serif;
+    font-size: 65px;
+    font-weight: normal;
+    color: #dc143c;
+    text-shadow: 0 0 20px rgba(220, 20, 60, 0.3), 0 0 30px rgba(220, 20, 60, 0.2);
+    opacity: 0;
+    letter-spacing: 1px;
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+    transform: translateY(20px);
+}
+
+.love-text.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.watermark {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4); /* subtle gray */
+    font-family: inherit;
+    z-index: 20;
+}
